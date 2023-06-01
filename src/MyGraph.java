@@ -13,6 +13,7 @@ public class MyGraph<V> {
         if (!graph.containsKey(source)) graph.put(source, new ArrayList<>());
         graph.get(source).add(edge);
     }
+    // Performs Breadth-First Search (BFS) starting from the given start vertex
     public void BFS(Vertex start){
         Set<Vertex> visited = new HashSet<>();
         Queue<Vertex> queue = new LinkedList<>();
@@ -32,6 +33,7 @@ public class MyGraph<V> {
             }
         }
     }
+    // Performs Dijkstra's algorithm starting from the given start vertex
     public Map<Vertex, Double> dijkstra(Vertex start) {
         Map<Vertex, Double> distances = new HashMap<>();
         for (Vertex node : graph.keySet()) {
