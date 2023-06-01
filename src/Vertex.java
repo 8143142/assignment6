@@ -12,5 +12,8 @@ public class Vertex<V> {
     public Map<Vertex<V>, Double> getAdjVertices() {
         return adjVertices;
     }
-
+    // Returns the data associated with the vertex
+    public V getData() {
+        return data;
+    }
 }
