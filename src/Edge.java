@@ -24,4 +24,12 @@ public class Edge<V> {
     public void setDest(Vertex dest) {
         this.dest = dest;
     }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
+    }
 }
