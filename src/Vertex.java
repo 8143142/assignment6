@@ -3,17 +3,26 @@ import java.util.Map;
 public class Vertex<V> {
     private V data;
     private Map<Vertex<V>, Double> adjVertices;
-
     // Adds an adjacent vertex and its weight to the current vertex
     public void addAdjVertex(Vertex<V> dest, double weight) {
         adjVertices.put(dest, weight);
     }
-    // Returns the map of adjacent vertices and their weights
+
     public Map<Vertex<V>, Double> getAdjVertices() {
         return adjVertices;
     }
-    // Returns the data associated with the vertex
+
     public V getData() {
         return data;
+    }
+
+    public Vertex(V data) {
+        this.data = data;
+        this.adjVertices = new HashMap<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Vertex " + this.data;
     }
 }
