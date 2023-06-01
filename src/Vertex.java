@@ -8,7 +8,7 @@ public class Vertex<V> {
     public void addAdjVertex(Vertex<V> dest, double weight) {
         adjVertices.put(dest, weight);
     }
-
+    // Returns the map of adjacent vertices and their weights
     public Map<Vertex<V>, Double> getAdjVertices() {
         return adjVertices;
     }
