@@ -32,6 +32,26 @@ public class MyGraph<V> {
             }
         }
     }
+    public Map<Vertex, Double> dijkstra(Vertex start) {
+        Map<Vertex, Double> distances = new HashMap<>();
+        for (Vertex node : graph.keySet()) {
+            distances.put(node, Double.MAX_VALUE);
+        }
+        distances.put(start, 0d);
 
+        PriorityQueue<Vertex> queue = new PriorityQueue<>(Comparator.comparingDouble(distances::get));
+        queue.add(start);
 
+        while (!queue.isEmpty()) {
+            Vertex currentVertex = queue.poll();
+            for (Edge neighbor : graph.get(currentVertex)) {
+                double distance = distances.get(currentVertex) + neighbor.getWeight();
+                if (distance < distances.get(currentVertex)) {
+                    distances.put(currentVertex, distance);
+                    queue.add((Vertex) neighbor.getDest());
+                }
+            }
+        }
+        return distances;
+    }
 }
